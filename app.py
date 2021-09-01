@@ -18,6 +18,10 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGHT'] = 10*1024*1024
 
 
+@app.route('/')
+def index():
+    return render_template("index.html")
+
 @app.route('/about')
 def about_page():
     return render_template("about_page.html")
@@ -25,7 +29,7 @@ def about_page():
 @app.route('/uploader',methods=['GET','POST'])
 def upload_file():
     if request.method == 'POST':
-        f = request.files['files']
+        f = request.files['file']
 
         # create secure filename
         filename = secure_filename(f.filename)
