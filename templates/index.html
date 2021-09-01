@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <p class="text-left">Il s'agit ici d'une page web pour l'utilisation d'un OCR en utilisant Tesseract-OCR  et la librairie OpenCV pour le Preprocessing des images</p>
+
+    <p> Uploader juste une image (format : '.jpeg' , '.png' , '.tif' ) et démarrer le processus d'OCR :</p>
+    <ul>
+        <li><a href="https://www.torzyn.com/images/senior_python_developer_nlplogix1_sm.jpg" target="_new">Senior Python Developer 1</a></li>
+        <li><a href="https://www.torzyn.com/images/senior_python_developer_nlplogix2_sm.jpg" target="_new">Senior Python Developer 2</a></li>
+        <li><a href="https://www.torzyn.com/images/senior_python_developer_nlplogix3_sm.jpg" target="_new">Senior Python Developer 3</a></li>
+    </ul>
+
+    <div class="upload-form">
+        <form action="/uploader" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file"/>
+            <input type="submit"/>
+        </form>
+    </div>
+{% endblock %}
